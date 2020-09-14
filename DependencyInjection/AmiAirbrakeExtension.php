@@ -31,7 +31,10 @@ class AmiAirbrakeExtension extends Extension
         $container->setParameter('ami_airbrake.project_key', $config['project_key']);
         $container->setParameter('ami_airbrake.host', $config['host']);
         $container->setParameter('ami_airbrake.ignored_exceptions', $config['ignored_exceptions']);
-
+        
+        if (key_exists('notifier_class', $config) && $config['notifier_class']) $container->setParameter('ami_airbrake.notifier', $config['notifier_class']);
+        if (key_exists('exception_class', $config) && $config['exception_class']) $container->setParameter('ami_airbrake.exception_listener.class', $config['exception_class']);
+        if (key_exists('shutdown_class', $config) && $config['shutdown_class']) $container->setParameter('ami_airbrake.shutdown_listener.class', $config['shutdown_class']);
 
         // Exception Listener
         if ($config['project_key']) {
