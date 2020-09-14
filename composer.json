@@ -1,5 +1,5 @@
 {
-    "name": "aminin/airbrake-bundle",
+    "name": "upinion/airbrake-bundle",
     "description": "Airbrake API v3 integration for Symfony 3/4/5",
     "license": "MIT",
     "authors": [
